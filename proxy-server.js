@@ -31,12 +31,12 @@ app.use(
 );
 
 app.use(
-  "/api/menu",
+  "/swiggy-menu",
   createProxyMiddleware({
     target: "https://www.swiggy.com",
     changeOrigin: true,
     pathRewrite: {
-      "^/api/menu": "/dapi/menu/pl",
+      "^/swiggy-menu": "/dapi/menu/pl",
     },
     onProxyReq: (proxyReq) => {
       proxyReq.setHeader("Content-Type", "application/json");
